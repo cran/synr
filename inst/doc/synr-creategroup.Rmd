@@ -1,0 +1,98 @@
+---
+title: "Creating ParticipantGroup objects"
+author: "Lowe Wilsson"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Creating ParticipantGroup objects}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(synr)
+```
+
+## Introduction
+To start using synr, you must first convert your data into a ParticipantGroup object. This tutorial explains how to convert raw consistency test data into this object. For more information on synr and ParticipantGroup itself, please see the [main tutorial](synr-tutorial.html).
+
+synr offers separate methods for converting 'long format' and 'wide format' raw data into ParticipantGroup objects. Brief explanations of the data formats are included at the beginning of each section.
+
+Note that if you have any **missing data**, e. g. if the response color hex codes for some participants are missing, those must be coded in the data frame as R **NA values**. If you have used other values to represent missingness, you must first replace those values with NA, e. g. by using the  [naniar](https://CRAN.R-project.org/package=naniar) package.
+
+## 'Long format' data
+['Long format' data](https://stefvanbuuren.name/fimd/sec-longandwide.html) adhere to the rule that there should only be one column for each variable/type of data. For consistency tests, this means that each trial should have one row in the data frame and there should be only one column for participant color responses and one for trial graphemes/symbols. You might also be familiar with the 'long format' from working with [tidy data](https://r4ds.had.co.nz/tidy-data.html).
+
+### Example data
+Here's an example of long formatted consistency test data.
+```{r}
+synr_exampledf_long_small
+```
+There were three participants. Each participant did 6 trials. Each trial is represented by a row, which holds the participant's ID, the grapheme/symbol used, the participant's response color (as an [RGB hex code](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet)), and the time it took for the participant to respond after grapheme presentation. Note that response time data are optional - you can still use synr if you don't have those.
+
+### Convert data into a ParticipantGroup object
+```{r}
+pg <- create_participantgroup(
+  raw_df=synr_exampledf_long_small,
+  n_trials_per_grapheme=2,
+  id_col_name="participant_id",
+  symbol_col_name="trial_symbol",
+  color_col_name="response_color",
+  time_col_name="response_time",
+  color_space_spec="Luv"
+)
+```
+You need to pass in:
+
+* A long-formatted data frame.
+* How many trials were run for each grapheme/symbol.
+* The name of participant ID, grapheme/symbol and response color columns.
+* A string that specifies which [color space](https://en.wikipedia.org/wiki/List_of_color_spaces_and_their_uses) you want to use ("XYZ", "sRGB", "Apple RGB", "Lab", or "Luv") later, when doing calculations with synr.
+
+If you want, you can also specify the name of a column of response times, if you have those.
+
+
+## 'Wide format' data
+['Wide format' data](https://stefvanbuuren.name/fimd/sec-longandwide.html) roughly adhere to the rule that there should only be one row for each subject/'object of interest'. For consistency tests, this means that each participant has a single row in the data frame, and multiple columns for each trial.
+
+### Example data
+Here's an example of wide formatted consistency test data.
+```{r}
+synr_exampledf_wide_small
+```
+There were three participants. Each participant did 6 trials. Each participant is represented by a row. Each trial is represented by three columns, e. g. `symbol_1`, `response_color_1` and `response_time_1` for the first trial. Note that response time data are optional -  you can still use synr if you don't have those.
+
+### Convert data into a ParticipantGroup object
+```{r}
+pg <- create_participantgroup_widedata(
+  raw_df=synr_exampledf_wide_small,
+  n_trials_per_grapheme=2,
+  participant_col_name="participant_id",
+  symbol_col_regex="symbol",
+  color_col_regex="colou*r",
+  time_col_regex="response_time",
+  color_space_spec="Luv"
+)
+```
+You need to pass in:
+
+* A wide-formatted data frame.
+* The participant column's name.
+* The number of trials used per grapheme (defaults to 3)
+* [Regular expression](https://r4ds.had.co.nz/strings.html#matching-patterns-with-regular-expressions) patterns that are unique for names of
+  + trial columns that hold symbols/graphemes displayed to the participants.
+  + trial columns that hold participants' response color [RGB hex codes](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet).
+* A string that specifies which [color space](https://en.wikipedia.org/wiki/List_of_color_spaces_and_their_uses) you want to use ("XYZ", "sRGB", "Apple RGB", "Lab", or "Luv") later, when doing calculations with synr.
+
+If you want, you can also specify a regular expression for response time columns, if you have those.
+
+#### Details about regular expression patterns in example
+The regular expression patterns, like 'symb' or 'col' must **only** occur in the corresponding columns. In the example data frame, only names of trial columns with color data have the pattern 'col' in them, so `color_col_regex = 'col'` would also work. If for instance the participant ID column had been called 'p_id_column", that column name would also fit the 'col' pattern, and hence `color_col_regex = 'col'` wouldn't work.
+
+You can use as long or short regular expressions as you need. In this example we could for example have used `color_col_regex = 'response_color_'`. 
