@@ -14,9 +14,11 @@ row corresponds to a single point in 3D space.}
 Calculates sum of squared point distances in
 3D space betweeen points and their centroid.
 \deqn{
-\frac{\sum_{i=1}^n (x_i-x_m)^2 + (y_i-y_m)^2 + (z-z_m)^2}
+\frac{
+\sum_{i=1}^n (x_i-x_m)^2 + (y_i-y_m)^2 + (z-z_m)^2
 }{
 sum_(i=1)^n ((x - x_m)^2 + (y - y_m)^2 + (z - z_m)^2)
+}
 }
 Where \eqn{X/Y/Z} represent one axis each, \eqn{a_m} represents the mean
 of all points' coordinates on an axis, and \eqn{n} represents the total

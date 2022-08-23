@@ -234,6 +234,56 @@ ParticipantGroup <- setRefClass(
       return(participant_level_mean_cons)
     },
 
+    get_mean_colors = function(
+      symbol_filter = NULL,
+      na.rm = FALSE
+    ) {
+      "Returns an nx3 data frame of mean colors for
+      participants in the group, where the columns
+      represent chosen color space axis 1, 2, and 3, respectively
+      (e.g. 'R', 'G', 'B' if 'sRGB' was specified upon participantgroup
+      creation).
+      
+      If na.rm=FALSE, for each
+      participant calculates the mean color if
+      all of the participants' graphemes only have response
+      colors that are non-NA, otherwise puts NA values
+      for that participant's row in matrix. If na.rm=TRUE,
+      for each participant calculates the mean color
+      for all of the participant's valid response colors,
+      while ignoring NA response colors. Note that
+      for participants whose graphemes ALL have at least one NA
+      response color value, an NA is put in the row corresponding to
+      that participant, regardless of what na.rm is set to.
+
+      If a character vector is passed to symbol_filter, only
+      data from graphemes with symbols in the passed vector
+      are used when calculating each participant's mean color." 
+      if (!has_participants()) {
+        stop(paste0("Tried to fetch mean colors ",
+          "for participantgroup without participants. Please add ",
+          "participants before calling get_mean_colors()."
+        ))
+      }
+      mean_color_mat <- matrix(
+        nrow=length(participants), ncol=3,
+        dimnames=list(
+          NULL,
+          c("color_axis_1_mean", "color_axis_2_mean", "color_axis_3_mean")
+        )
+      )
+      loop_index <- 1
+      for (p in participants) {
+        mean_color_vec <- p$get_participant_mean_color(
+          symbol_filter = symbol_filter,
+          na.rm = na.rm
+        )
+        mean_color_mat[loop_index, ] <- mean_color_vec
+        loop_index <- loop_index + 1
+      }
+      return(data.frame(mean_color_mat))
+    },
+
     get_mean_response_times = function(
       symbol_filter = NULL,
       na.rm = FALSE

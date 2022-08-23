@@ -84,7 +84,7 @@ Participant <- setRefClass(
         "Returns a character vector with all symbols for
         graphemes associated with the participant."
         return(names(graphemes))
-      },
+    },
 
     get_mean_response_time = function(
         symbol_filter = NULL,
@@ -127,8 +127,8 @@ Participant <- setRefClass(
       "Returns an n-by-3 matrix of all non-NA color responses' data,
       where each column represents a color axis and each row a response
       color. If a character vector is passed to symbol_filter,
-      only data from responses associated with graphemes with symbols
-      are included."
+      only data from responses associated with graphemes with corresponding 
+      symbols are included."
       if (!has_graphemes()) {
         return(matrix(nrow = 0, ncol = 3))
       }
@@ -154,6 +154,78 @@ Participant <- setRefClass(
       return(num_all_colored)
     },
 
+    get_grapheme_mean_colors = function(
+      symbol_filter = NULL,
+      na.rm = FALSE
+    ) {
+      "Returns a list of grapheme symbols with associated mean colors,
+      using the color space set at participant creation. Colors are represented
+      by 3-element vectors. 
+      
+      Example: if color space is RGB, vector element 1 represents
+      grapheme mean R value, element 2 mean G value, element 3
+      B value.
+
+      If na.rm = TRUE, for each grapheme a mean color is calculated even
+      if one its associated response colors is missing. Defaults to
+      na.rm = FALSE.
+
+      If a character vector is passed to symbol_filter, only
+      mean colors for graphemes with symbols
+      in the passed vector are returned."
+      if (!has_graphemes()) {
+        stop(paste0(
+          "Tried to fetch mean colors for participant ",
+          "without graphemes. Please add graphemes before calling ",
+          "get_grapheme_mean_colors()."
+        ))
+      }
+      grapheme_mean_colors <- list()
+      filtered_graphemes <- filter_graphemes(
+        graphemes,
+        symbol_filter
+      )
+      for (grapheme in filtered_graphemes) {
+        g_m_color <- grapheme$get_mean_color(
+          na.rm = na.rm
+        )
+        grapheme_mean_colors[[grapheme$symbol]] <- g_m_color
+      }
+      return(grapheme_mean_colors)
+    },
+
+    get_participant_mean_color = function(
+      symbol_filter = NULL,
+      na.rm = FALSE
+    ) {
+      "Returns average of all of participants' registered
+      response colors (based on the color space
+      set at participant initialization) as a 3-element vector.
+      Example: if color space is RGB, element 1 represents
+      mean R value, element 2 mean G value, element 3
+      B value.
+
+      If a character vector is passed to
+      symbol_filter, only data from graphemes with symbols
+      in the passed vector are used when calculating the
+      mean color.
+
+      If na.rm = FALSE, calculates the mean response color if
+      all of the participants' graphemes only have response
+      colors that are non-NA, otherwise returns NA.
+      If na.rm = TRUE, returns the mean response color based on
+      all non-NA response colors."
+
+      color_matrix <- do.call(
+        rbind,
+        get_grapheme_mean_colors(
+          symbol_filter = symbol_filter,
+          na.rm = na.rm
+        )
+      )
+      return(colMeans(color_matrix, na.rm = na.rm)) 
+    },
+
     get_consistency_scores = function(
       method = "euclidean",
       symbol_filter = NULL,
@@ -176,9 +248,9 @@ Participant <- setRefClass(
       the base R dist function for all options)"
       if (!has_graphemes()) {
         stop(paste0(
-          "Tried to fetch mean consistency score for participant ",
+          "Tried to fetch consistency scores for participant ",
           "without graphemes. Please add graphemes before calling ",
-          "get_mean_consistency_score()."
+          "get_consistency_scores()."
         ))
       }
       grapheme_consistency_scores <- list()

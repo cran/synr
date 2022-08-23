@@ -122,13 +122,23 @@ Grapheme<- setRefClass("Grapheme",
                          },
 
                          get_mean_color = function(na.rm=FALSE) {
-                           "Average all registered response's colors and
+                           "Average all registered response colors and
                            return the result (using the color space
-                           set at grapheme initialization) as a 3-element vector."
+                           set at grapheme initialization) as a 3-element vector.
+                           Example: if color space is RGB, element 1 represents
+                           mean R value, element 2 mean G value, element 3
+                           B value.
+                           
+                           If na.rm=FALSE and any of the response colors is missing,
+                           return a 3-element NA vector. If na.rm=TRUE, return a
+                           3-element NA vector if all response colors are missing,
+                           otherwise return mean of all available colors."
+                           all_miss = all(is.na(response_colors))
+
                            if (all(is.na(response_colors))) {
-                             return(NA)
+                             return(c(NA, NA, NA))
                            }
-                           return(colMeans(response_colors))
+                           return(colMeans(response_colors, na.rm=na.rm))
                          },
 
                          get_mean_response_time = function(na.rm=FALSE) {

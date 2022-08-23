@@ -60,7 +60,7 @@
 #' }
 "synr_exampledf_long_small"
 
-#' Raw consistency test data example, long format (small)
+#' Raw consistency test data example, long format
 #'
 #' A data frame with an example of raw consistency test data that are
 #' compatible with the synr package's `create_participantgroup' function.

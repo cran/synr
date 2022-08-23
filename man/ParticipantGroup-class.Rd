@@ -129,6 +129,28 @@ and add each one using the add_participant() method.}
 \item{\code{get_ids()}}{Returns a character vector with all ids for
 participants associated with the participantgroup.}
 
+\item{\code{get_mean_colors(symbol_filter = NULL, na.rm = FALSE)}}{Returns an nx3 data frame of mean colors for
+      participants in the group, where the columns
+      represent chosen color space axis 1, 2, and 3, respectively
+      (e.g. 'R', 'G', 'B' if 'sRGB' was specified upon participantgroup
+      creation).
+      
+      If na.rm=FALSE, for each
+      participant calculates the mean color if
+      all of the participants' graphemes only have response
+      colors that are non-NA, otherwise puts NA values
+      for that participant's row in matrix. If na.rm=TRUE,
+      for each participant calculates the mean color
+      for all of the participant's valid response colors,
+      while ignoring NA response colors. Note that
+      for participants whose graphemes ALL have at least one NA
+      response color value, an NA is put in the row corresponding to
+      that participant, regardless of what na.rm is set to.
+
+      If a character vector is passed to symbol_filter, only
+      data from graphemes with symbols in the passed vector
+      are used when calculating each participant's mean color.}
+
 \item{\code{get_mean_consistency_scores(
   method = "euclidean",
   symbol_filter = NULL,

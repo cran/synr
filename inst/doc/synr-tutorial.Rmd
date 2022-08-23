@@ -24,7 +24,9 @@ library(synr)
 
 ## Introduction
 ### Synesthesia and consistency testing
-Within [synesthesia](https://en.wikipedia.org/wiki/Synesthesia) research, specifically research about [grapheme-color synesthesia](https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia), **[consistency tests](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118597/#S4title)** are often used. Basically, a participant is shown a set of **graphemes** (e. g. letters, digits, months, or other words) and has to respond by indicating what color, if any, they associate with the grapheme. Each grapheme is repeated a certain number of times, usually three times, throughout the test. If the participant is unusually consistent in the colors they respond with, e. g. choosing a red color every time an 'A' is shown and always choosing a green color for 'H', this indicates that the participant might have synesthetic grapheme-color associations. There might of course be other reasons for consistent response patterns, such as if the participant employed mnemonic strategies, for which reason consistency testing is often combided with other measures for synesthesia classification. Still, consistency testing is widely considered to be an important tool for synesthesia research.
+Within [synesthesia](https://en.wikipedia.org/wiki/Synesthesia) research, **[consistency tests](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118597/#S4title)** are often used. Basically, a participant is presented a set of stimuli (inducers; e. g. letters, digits, months) and has to respond by indicating what color (concurrent), if any, they associate with the grapheme. Each stimulus is repeated a certain number of times, usually three times, throughout the test. If the participant is unusually consistent in the colors they respond with, e. g. choosing a red color every time an 'A' is shown and always choosing a green color for 'H', this indicates that the participant might have synesthetic grapheme-color associations. There might of course be other reasons for consistent response patterns, such as if the participant employed mnemonic strategies, for which reason consistency testing is often combined with other measures for synesthesia classification. Still, consistency testing is widely considered to be an important tool for synesthesia research.
+
+An archetypal form of synesthesia, often investigated with consistency tests, is [grapheme-color synesthesia](https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia), where **grapheme** refers to a single written symbol such as a digit or a letter. Note that in order to make the documentation less abstract, **synr's documentation and code consistently uses 'grapheme' to refer to consistency test stimuli in general**. Examples of this can be seen below. Note, however, that synr can be also be used with data from consistency tests involving non-grapheme stimuli (an example of this can be found in [another synr vignette](dingemanse-data-example.html)).
 
 In consistency testing, participants' levels of consistency are estimated by using a score based on response colors' color space distances. This has been called by different names, such as ['color variation score'](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118597/#S4title). Within the synr package, the term **'consistency score'** is used to refer to this score.
 
@@ -34,7 +36,7 @@ The aim of this package is to facilitate analysis of consistency test data by pr
 * Quick access/lookup of individual participants' data.
 * Calculation of consistency scores.
   + Since different researchers have used different [color spaces](https://en.wikipedia.org/wiki/Color_space) to calculate consistency scores, methods include options for specifying some (but not all) different color spaces. 
-  + Similarly, different algorithms (e. g. [manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry) or [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) have been utilized to calculate color space distances. synr allows for choosing between some options here also, through specifications in method calls.
+  + Similarly, different algorithms (e. g. [manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry) or [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance)) have been utilized to calculate color space distances. synr allows for choosing between some options here also, through specifications in method calls.
 * Validating participant data using so-called [clustering](https://en.wikipedia.org/wiki/Cluster_analysis).
   + This identifies participants who have too few responses or have used too few colors, e. g. only black and white, for their data to be reliable for estimating the degree of synesthetic associations.
 * Filtering the data in order to calculate the above statistics only for a subset of graphemes.
@@ -140,9 +142,7 @@ num_onlynonna_p2
 
 So, the second participant gave only valid (non-NA) color responses for 3 graphemes.
 
-The rest of the tutorial will focus on participantgroup-level methods. You can find more info about participant-level methods by running `help(Participant)`.
-
-#### participantgroup level: `get_numbers_all_colored_graphemess`
+#### participantgroup level: `get_numbers_all_colored_graphemes`
 The participantgroup method `get_numbers_all_colored_graphemes` produces a numeric vector that holds each participant's number of valid color responses:
 ```{r pgroup_numvalid}
 num_onlynonna <- pg$get_numbers_all_colored_graphemes()
@@ -163,6 +163,51 @@ ctest_summary_df <- data.frame(
 )
 head(ctest_summary_df)
 ```
+
+### Mean color response
+It's sometimes useful to calculate participants' mean color responses. For instance, if using the color space CIELUV, the mean 'L' value indicates if a participant tended to use lighter or darker colors. The mean 'u' and 'v' values can be useful for calculating the average [chroma, hue and saturation](https://en.wikipedia.org/wiki/CIELUV) values.
+
+#### participant level: `get_participant_mean_color`
+This method returns a 3-element numeric vector that represents the participant's mean response color value for color axis 1, 2 and 3, respectively. E.g. if color space 'sRGB' was specified when creating the participantgroup object, the 1st value corresponds to axis 'R', 2nd value to axis 'G', and 3rd value to axis 'B'.
+
+(in the code example, the values correspond to axes 'L', 'u', 'v', as that color space was specified when creating the participantgroup earlier)
+
+```{r participant_meancolor}
+mean_color_vec_p2 <- pg$participants[['2']]$get_participant_mean_color(na.rm=TRUE)
+mean_color_vec_p2
+```
+
+The participant's mean response color, disregarding any invalid color responses (`na.rm=TRUE`), had an 'L' value of 59, 'u' value of 0.52 and 'v' value of -57.
+
+The rest of the tutorial will focus only on participantgroup-level methods. You can find more info about participant-level methods by running `help(Participant)`.
+
+#### participantgroup level: `get_mean_colors`
+The participantgroup method `get_mean_colors` produces a data frame that holds each participant's mean color response values, where the columns represent chosen color space axis 1, 2, and 3, respectively (e.g. 'R', 'G', 'B' if 'sRGB' was specified upon participantgroup creation):
+
+```{r pgroup_meancolor}
+mean_colors_df <- pg$get_mean_colors(na.rm=TRUE)
+mean_colors_df
+```
+
+Since this example is based on a participantgroup created with color space 'Luv' specification, the columns correspond to CIELUV 'L', 'u' and 'v' axes.
+
+There are various ways to combine the returned data frame with participant ID's, here's one using the R built-in `cbind` function:
+```{r ctest_summary_df_2}
+mean_cscores <- pg$get_mean_consistency_scores()
+num_onlynonna <- pg$get_numbers_all_colored_graphemes()
+p_ids <- pg$get_ids()
+ctest_summary_df <- data.frame(
+  participant_id=p_ids, 
+  mean_consistency_score=mean_cscores,
+  num_valid_graphemes=num_onlynonna
+)
+
+mean_color_df <- pg$get_mean_colors(na.rm=TRUE)
+ctest_summary_df <- cbind(ctest_summary_df, mean_color_df)
+
+head(ctest_summary_df)
+```
+
 
 ### Validating participant data
 synr includes a unique procedure for validating participant data based on estimating how varied participants' color responses are. Detailed information is available in the [validation-focused article](validate-data.html). A very rough example and explanation follows.
@@ -207,8 +252,7 @@ In the example, we basically ask synr to check for each participant if they have
 
 This method, unlike other ones we've seen, returns a data frame. Looking at it, we can see that all data sets except the second one were classified as valid. The second data set was classified as invalid due to 'hi_prop_tight_cluster', which means that the participant responded with roughly the same color for more than 60% of all letter trials. The 'twcv' column gives a summary statistic which roughly describes how much variation there was in the participant's data. The 'num_clusters' column gives an estimate of about how many clearly discernible colors that the participant repeatedly used.
 
-There are various ways to combine the returned data frame with participant ID's, here's one using the R built-in `cbind` function:
-
+Combining the returned mean color response data frame with other extracted data can be done as follows:
 ```{r combine_val_id}
 val_id_df <- cbind(
   participant_id=pg_large$get_ids(),

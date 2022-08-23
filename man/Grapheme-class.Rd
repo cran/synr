@@ -40,9 +40,17 @@ base/stats function dist() and so supports only
 distance calculation methods implemented by dist()
 (use help(dist) to learn more about it).}
 
-\item{\code{get_mean_color(na.rm = FALSE)}}{Average all registered response's colors and
+\item{\code{get_mean_color(na.rm = FALSE)}}{Average all registered response colors and
 return the result (using the color space
-set at grapheme initialization) as a 3-element vector.}
+set at grapheme initialization) as a 3-element vector.
+Example: if color space is RGB, element 1 represents
+mean R value, element 2 mean G value, element 3
+B value.
+
+If na.rm=FALSE and any of the response colors is missing,
+return a 3-element NA vector. If na.rm=TRUE, return a
+3-element NA vector if all response colors are missing,
+otherwise return mean of all available colors.}
 
 \item{\code{get_mean_response_time(na.rm = FALSE)}}{Get the mean of the grapheme's associated
 response times.}

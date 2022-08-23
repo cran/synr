@@ -150,6 +150,22 @@ symbols in the passed vector are returned.}
       (usually 'manhattan' or 'euclidean' - see documentation for
       the base R dist function for all options)}
 
+\item{\code{get_grapheme_mean_colors(symbol_filter = NULL, na.rm = FALSE)}}{Returns a list of grapheme symbols with associated mean colors,
+      using the color space set at participant creation. Colors are represented
+      by 3-element vectors. 
+      
+      Example: if color space is RGB, vector element 1 represents
+      grapheme mean R value, element 2 mean G value, element 3
+      B value.
+
+      If na.rm = TRUE, for each grapheme a mean color is calculated even
+      if one its associated response colors is missing. Defaults to
+      na.rm = FALSE.
+
+      If a character vector is passed to symbol_filter, only
+      mean colors for graphemes with symbols
+      in the passed vector are returned.}
+
 \item{\code{get_mean_consistency_score(
   symbol_filter = NULL,
   method = "euclidean",
@@ -191,13 +207,31 @@ calculating the mean response time.}
 \item{\code{get_nonna_color_resp_mat(symbol_filter = NULL)}}{Returns an n-by-3 matrix of all non-NA color responses' data,
 where each column represents a color axis and each row a response
 color. If a character vector is passed to symbol_filter,
-only data from responses associated with graphemes with symbols
-are included.}
+only data from responses associated with graphemes with corresponding 
+symbols are included.}
 
 \item{\code{get_number_all_colored_graphemes(symbol_filter = NULL)}}{Returns the number of graphemes for which all
 responses have an associated non-NA color. If a
 character vector is passed to symbol_filter, only
 graphemes with symbols in the passed vector are counted.}
+
+\item{\code{get_participant_mean_color(symbol_filter = NULL, na.rm = FALSE)}}{Returns average of all of participants' registered
+      response colors (based on the color space
+      set at participant initialization) as a 3-element vector.
+      Example: if color space is RGB, element 1 represents
+      mean R value, element 2 mean G value, element 3
+      B value.
+
+      If a character vector is passed to
+      symbol_filter, only data from graphemes with symbols
+      in the passed vector are used when calculating the
+      mean color.
+
+      If na.rm = FALSE, calculates the mean response color if
+      all of the participants' graphemes only have response
+      colors that are non-NA, otherwise returns NA.
+      If na.rm = TRUE, returns the mean response color based on
+      all non-NA response colors.}
 
 \item{\code{get_plot(
   cutoff_line = FALSE,

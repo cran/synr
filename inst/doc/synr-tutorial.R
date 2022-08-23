@@ -66,6 +66,29 @@ ctest_summary_df <- data.frame(
 )
 head(ctest_summary_df)
 
+## ----participant_meancolor----------------------------------------------------
+mean_color_vec_p2 <- pg$participants[['2']]$get_participant_mean_color(na.rm=TRUE)
+mean_color_vec_p2
+
+## ----pgroup_meancolor---------------------------------------------------------
+mean_colors_df <- pg$get_mean_colors(na.rm=TRUE)
+mean_colors_df
+
+## ----ctest_summary_df_2-------------------------------------------------------
+mean_cscores <- pg$get_mean_consistency_scores()
+num_onlynonna <- pg$get_numbers_all_colored_graphemes()
+p_ids <- pg$get_ids()
+ctest_summary_df <- data.frame(
+  participant_id=p_ids, 
+  mean_consistency_score=mean_cscores,
+  num_valid_graphemes=num_onlynonna
+)
+
+mean_color_df <- pg$get_mean_colors(na.rm=TRUE)
+ctest_summary_df <- cbind(ctest_summary_df, mean_color_df)
+
+head(ctest_summary_df)
+
 ## ----example_validation-------------------------------------------------------
 pg_large <- create_participantgroup(
   raw_df=synr_exampledf_large,

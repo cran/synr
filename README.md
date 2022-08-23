@@ -4,7 +4,12 @@
 This is an [R](https://www.r-project.org/) package for working with data resulting from [grapheme-color synesthesia](https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia)-related [consistency tests](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118597/#S4title). synr provides tools for exploring test data, including visualizing a single participant's data, and applying summarizing functions such as calculating [color variation/consistency scores](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118597/#S4title) or classifying participant data as valid or invalid.
 
 ## Installation
-TODO: This section will be updated once it's been decided where to make synr binaries available. 
+synr is available [on CRAN](https://cran.r-project.org/package=synr), meaning you can simply:
+```r
+install.packages('synr')
+```
+
+Note that this will also install packages that synr depends on unless you already have them (`dbscan`, `data.table` and `ggplot2`).
 
 ## Usage
 Once data are in an appropriately formatted data frame/tibble ('long format' - see vignettes for more information), everything starts with rolling up participant data into a 'ParticipantGroup' object with `create_participantgroup_widedata`:

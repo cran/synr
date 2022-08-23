@@ -548,7 +548,7 @@ Note that a synr 'invalid' classification essentially means that it's inappropri
 
 Some response patterns only make sense to humans and cannot be picked up by DBSCAN. An example is using an __o__range color for the grapheme 'O', which was found in one study (Simner et al., 2006) to be more frequent among self-reported non-synesthetes with low consistency scores than among self-reported synesthetes. If validity assessments are to take these very subjective patterns into account (as done in e. g. Carmichael et al., 2015), synr needs to be complemented by human ratings.
 
-If synr is used for data validation then __please reference synr__ itself (for now, https://github.com/datalowe/synr) and include code and/or values you passed to `check_valid_get_twcv_scores` when reporting results. It's also important to avoid post-hoc definitions of validation criteria Thus, if it's feasible, __please decide before starting data collection, or based on a smaller initial sample, what values to use with `check_valid_get_twcv_scores`__.
+If synr is used for data validation then __please reference synr__ itself (for now, https://cran.r-project.org/package=synr) and include code and/or values you passed to `check_valid_get_twcv_scores` when reporting results. It's also important to avoid post-hoc definitions of validation criteria. Thus, if it's feasible, __please decide before starting data collection, or based on a smaller initial sample, what values to use with `check_valid_get_twcv_scores`__.
 
 ## More information
 ### DBSCAN

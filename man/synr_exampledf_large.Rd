@@ -3,7 +3,7 @@
 \docType{data}
 \name{synr_exampledf_large}
 \alias{synr_exampledf_large}
-\title{Raw consistency test data example, long format (small)}
+\title{Raw consistency test data example, long format}
 \format{
 A data frame with 516 rows and 4 columns:
 \describe{
