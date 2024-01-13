@@ -29,22 +29,23 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
@@ -62,55 +63,54 @@ pre > code.sourceCode { white-space: pre-wrap; }
 pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -119,13 +119,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -333,21 +340,21 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(synr)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(synr)</span></code></pre></div>
 <p>This is the ‘quick start’ guide to synr. For an in-depth tutorial,
 please see the <a href="synr-tutorial.html">main tutorial</a>.</p>
 <div id="rolling-up-the-data" class="section level2">
 <h2>Rolling up the data</h2>
 <p>If you have long format data (otherwise see <a href="synr-creategroup.html">Creating ParticipantGroup objects</a>):</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pg <span class="ot">&lt;-</span> <span class="fu">create_participantgroup</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">raw_df=</span>synr_exampledf_long_small,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_trials_per_grapheme=</span><span class="dv">2</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">id_col_name=</span><span class="st">&quot;participant_id&quot;</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">symbol_col_name=</span><span class="st">&quot;trial_symbol&quot;</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">color_col_name=</span><span class="st">&quot;response_color&quot;</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">time_col_name=</span><span class="st">&quot;response_time&quot;</span>, <span class="co"># optional, not necessary for core functionality</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">color_space_spec=</span><span class="st">&quot;Luv&quot;</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>pg <span class="ot">&lt;-</span> <span class="fu">create_participantgroup</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="at">raw_df=</span>synr_exampledf_long_small,</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">n_trials_per_grapheme=</span><span class="dv">2</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="at">id_col_name=</span><span class="st">&quot;participant_id&quot;</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="at">symbol_col_name=</span><span class="st">&quot;trial_symbol&quot;</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="at">color_col_name=</span><span class="st">&quot;response_color&quot;</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="at">time_col_name=</span><span class="st">&quot;response_time&quot;</span>, <span class="co"># optional, not necessary for core functionality</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>  <span class="at">color_space_spec=</span><span class="st">&quot;Luv&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>)</span></code></pre></div>
 <p>The resulting object (<code>pg</code>) is a nested structure
 implemented with <a href="http://adv-r.had.co.nz/OO-essentials.html#rc">reference
 classes</a>. With this, you can call various methods and access various
@@ -357,47 +364,47 @@ attributes. Examples of common use cases are included below.</p>
 <h2>Calculate participant consistency scores</h2>
 <p>Consistency scores for all participants, looking only at trials
 involving letters.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cons_scores_letters <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_mean_consistency_scores</span>(<span class="at">symbol_filter=</span>LETTERS)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cons_scores_letters)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 119.2646 129.1678 145.5045</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>cons_scores_letters <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_mean_consistency_scores</span>(<span class="at">symbol_filter=</span>LETTERS)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">print</span>(cons_scores_letters)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; [1] 119.2646 129.1678 145.5045</span></span></code></pre></div>
 </div>
 <div id="produce-a-plot-of-a-single-participants-responses" class="section level2">
 <h2>Produce a plot of a single participant’s responses</h2>
 <p>Plot of single participant’s per-grapheme consistency scores, looking
 only at trials involving the graphemes ‘A’ and ‘7’.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pg<span class="sc">$</span>participants[[<span class="st">&#39;1&#39;</span>]]<span class="sc">$</span><span class="fu">get_plot</span>(<span class="at">symbol_filter=</span><span class="fu">c</span>(<span class="st">&#39;A&#39;</span>, <span class="st">&#39;7&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>pg<span class="sc">$</span>participants[[<span class="st">&#39;1&#39;</span>]]<span class="sc">$</span><span class="fu">get_plot</span>(<span class="at">symbol_filter=</span><span class="fu">c</span>(<span class="st">&#39;A&#39;</span>, <span class="st">&#39;7&#39;</span>))</span></code></pre></div>
 <p><img src="data:image/png;base64,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dOSRR6add945zZkzJ02bNi1vx7nnnpvigogXXHBB3dqlPgQIECBAgACBQQU6CkBx+4vrr78+nXTSSWnNNddsvdjkyZNTTI6+9NJLW9s8IECAAAECBAjUXaCjADR69Oh8pOfpp59erj233nprvm+5HTYQIECAAAECBGoq0FEAGjNmTNp7773T8ccfn2644Ya8KTEqdP7556ezzz47zZo1q6bNUy0CBAgQIECAwPICHU+CPuecc9L++++fdtxxxzRixIi0xx57pEWLFqWDDz44HXvsscu/si0ECBAgQIAAgZoKdByApk6dmq699tp05ZVXpttvvz3/+vuMGTNS/LEQIECAAAECBLpJoOMAFI2KkZ8tttgirb/++q02xtfjY2L0i170otY2DwgQIECAAAECdRboOAD94Ac/SIceemh+O4xlG+RWGMuKWCdAgAABAgTqLNBxAHrnO9+ZZs6cmY455pi00UYbtbVpwoQJbetWCBAgQIAAAQJ1FugoAD3xxBPp/vvvT2eeeaZTXXXuTXUjQIAAAQIEOhLo6GvwMcdn0003Tffee29HL+ogAgQIECBAgECdBQpHgOLqz82LH8b8n5jrc8IJJ6TNN988DbwB6gYbbJC22mqrOrdT3QgQIECAAAECLYHCAHTEEUekuNLzwOU973nPwNX8sUnQy5HYQIAAAQIECNRYoDAA/frXv06NRmPI6o8aNWrIYxxAgAABAgQIEKiLQGEAGjt2bFs9H3/88XT55Zenm2++Oa233npp++23T69+9avbjrFCgAABAgQIEKi7QGEAGlj53/72t/mtMO655570spe9LM2ZMyfNnTs3HXLIIelrX/taWjYsDXyuxwQIECBAgACBOgl09C2wqHDM/dltt93Sfffdl+Lqzw8//HCKSdJxe4zPfe5zdWqTuhAgQIAAAQIECgU6CkDxTbDf/OY36YwzzmhdB2jkyJFphx12SB/60IfSD3/4w8JC7CRAgAABAgQI1EmgowAUV3pea621UkyKXna544470uTJk5fdbJ0AAQIECBAgUFuBjucAxfV/jjrqqPSWt7wlzZo1K78+0I9+9KP0H//xH+kzn/lMuuKKK/JGxk1RX/KSl9S2wSpGgAABAgQIEBiRfc196O+5Z05rr732Cm+Euizhe9/73vTFL35x2c2t9avufSS9ZuNJrXUPCBAoX+C8W+5Ni5c20uEzNim/cCUSKEng4tvuS/MWLEnT1hyX9nqxMxUlsdemmKvvfTTtsvF6g9an4xGghx56qKNrAo0e3fFLDlopOwgQIECAAAECq1Kg47Tia+6rshu8NgECBAgQIFCmQMcBKCo1f/789Oijj6bFixfndVyyZEl+WuyRRx5Je++9d5n1VhYBAgQIECBA4HkLdByAvvnNb6Z3vetdrZujDizxHe94hwA0EMRjAgQIECBAoNYCHX0NPlrwT//0T+nAAw9MP/3pT9Maa6yRXwDx85//fJoyZUo69dRTa91IlSNAgAABAgQIDBToaARo3rx5afbs2enkk09OG220UVp//fXzb4Udc8wxacGCBemTn/xk/lX4gS/sMQECBAgQIECgrgIdjQCtvvrqabXVVkvjxo3L2xH3Arv66qvzxzvttFO67rrr6to+9SJAgAABAgQILCfQUQCK8LPtttumj3/84+nJJ59MM2bMSN/5znfSokWL0qWXXpo222yz5V7YBgIECBAgQIBAXQU6OgUWlY+LG77hDW9Iu+++e4pJz9ttt12aOHFiim+CXXLJJXVtn3oRIECAAAECBJYT6DgAHX744elLX/pSmjlzZh58brrppvTjH/84ve51r0ubbOJqssvJ2kCAAAECBAjUVqCjABTX/7nzzjvTqFGj8vATrdl4443ze4PVtmUqRoAAAQIECBAYRKCjADR+/Ph02mmnpQ9+8IPp/vvvT1tuuWWKbc1l0qRJafr06c1VPwkQIECAAAECtRboKABFC0488cT8qs9HH330cg066KCD0kUXXbTcdhsIECBAgAABAnUU6DgAxcjPYDeOdwPUOnatOhEgQIAAAQKDCXQcgCZMmDDYa9hOgAABAgQIEOgqgY4C0Jw5c1JcDDG+9h6nuv74xz+2GvmmN70pbbXVVq11DwgQIECAAAECdRcYMgCdcMIJ6cwzz0xxM9QDDjggnX/++ennP/95WnfddfM5QXEhxGuuuSaNGDGi7m1VPwIECBAgQIBALlB4JegIO2eccUY6++yz84sgxjMi6Bx11FHprrvuym+HceONN6bvfve7OAkQIECAAAECXSNQGIC+8pWvpA984APpsMMOSyua6Bz3BNtnn33Sz372s65psIoSIECAAAECBAoD0C233JL23HPPNqW4IeqYMWNa27bffvsUx1kIECBAgAABAt0iUDgHKL75Fff6GrhccMEFA1fTU089ldZff/22bVYIECBAgAABAnUWKBwB2mWXXdJ1111XWP+rrroqveY1ryk8xk4CBAgQIECAQJ0ECgNQnP46/fTT02233bbCOn/qU59K119/fX5D1BUeYCMBAgQIECBAoIYChafA4ttecc2f7bbbLp8IvcMOO6Rp06al3/3udylGfv77v/87ff3rX08zZsyoYdNUiQABAgQIECCwYoHCABRPia/Bb7LJJulb3/pW+upXv5oWLlyY3wh1xx13TBdeeGE68MADV/zKthIgQIAAAQIEaiowZACKescNUOPPggUL8uv/bLHFFmm11VaraZNUiwABAgQIECBQLNBRAGq+xNixY9P06dObq34SIECAAAECBLpSoHASdFe2SKUJECBAgAABAkMICEBDANlNgAABAgQI9J6AANR7fapFBAgQIECAwBACAtAQQHYTIECAAAECvScgAPVen2oRAQIECBAgMISAADQEkN0ECBAgQIBA7wkIQL3Xp1pEgAABAgQIDCEgAA0BZDcBAgQIECDQewICUO/1qRYRIECAAAECQwgIQEMA2U2AAAECBAj0noAA1Ht9qkUECBAgQIDAEALDuhfYEK9lNwECXSLw9BPz0jPPPJPuv99/AV3SZar5PAQefejB9OTCpWn8M2PT/WMXP49X8JTBBCZNmpTi/qDdvPjfr5t7T90JPE+Bb51xUrrqku+m9z/P53saAQL9LXDZZZelWbNmdTWCU2Bd3X0qT+D5C4wY6Z//89fzTAIEul3A/4Dd3oPqT+B5CowYMeJ5PtPTCBAg0P0CAlD396EWECBAgAABAsMUEICGCeZwAgQIECBAoPsFBKDu70MtIECAAAECBIYpIAANE8zhBAgQIECAQPcLCEDd34daQIAAAQIECAxTQAAaJpjDCRAgQIAAge4XEIC6vw+1gAABAgQIEBimgAA0TDCHEyBAgAABAt0vIAB1fx9qAQECBAgQIDBMAQFomGAOJ0CAAAECBLpfQADq/j7UAgIECBAgQGCYAgLQMMEcToAAAQIECHS/gADU/X2oBQQIECBAgMAwBQSgYYI5nAABAgQIEOh+AQGo+/tQCwgQIECAAIFhCghAwwRzOAECBAgQIND9AgJQ9/ehFhAgQIAAAQLDFBCAhgnmcAIECBAgQKD7BQSg7u9DLSBAgAABAgSG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AQGoNl2hIgQIECBAgEBZAgJQWdLKIUCAAAECBGojIADVpitUhAABAgQIEChLQAAqS1o5BAgQIECAQG0EBKDadIWKECBAgAABAmUJCEBlSSuHAAECBAgQqI2AAFSbrlARAgQIECBAoCwBAagsaeUQIECAAAECtREQgGrTFSpCgAABAgQIlCUgAJUlrRwCBAgQIECgNgICUG26QkUIECBAgACBsgQEoLKklUOAAAECBAjURkAAqk1XqAgBAgQIECBQloAAVJa0cggQIECAAIHaCAhAtekKFSFAgAABAgTKEhCAypJWDgECBAgQIFAbAQGoNl2hIgQIECBAgEBZAgJQWdLKIUCAAAECBGojIADVpitUhAABAgQIEChLQAAqS1o5BAgQIECAQG0EBKDadIWKECBAgAABAmUJCEBlSSuHAAECBAgQqI2AAFSbrlARAgQIECBAoCwBAagsaeUQIECAAAECtREQgGrTFSpCgAABAgQIlCUgAJUlrRwCBAgQIECgNgICUG26QkUIECBAgACBsgQEoLKklUOAAAECBAjURkAAqk1XqAgBAgQIECBQloAAVJa0cggQIECAAIHaCAhAtekKFSFAgAABAgTKEhCAypJWDgECBAgQIFAbAQGoNl2hIgQIECBAgEBZAgJQWdLKIUCAAAECBGojIADVpitUhAABAgQIEChLQAAqS1o5BAgQIECAQG0EBKDadIWKECBAgAABAmUJCEBlSSuHAAECBAgQqI2AAFSbrlARAgQIECBAoCwBAagsaeUQIECAAAECtREQgGrTFSpCgAABAgQIlCUgAJUlrRwCBAgQIECgNgICUG26QkUIECBAgACBsgQEoLKklUOAAAECBAjURkAAqk1XqAgBAgQIECBQloAAVJa0cggQIECAAIHaCIwuuybPLFqSrrt/btnFKo8AgQECS5Y28jX/FgegeNhzAvMXL83b9Nizi3zu9FzvDt2gRUv/r/8HO3JEI1sG27mqtldQ5Kpqitcl0JUC22+/fXr66afTbbfd1pX1V2kCnQjst99+6Y477kgzZ85MZ511VidPcUwPCYwYMaKwNaWPAEVthqpUYY3tJEBgpQWav4T4t7jSlF6gxgLN9/nSbCTAe73GHVVR1cwBqghesQQIECBAgEB1AgJQdfZKJlCZwKabbpomTZpUWfkKJlCGwOabb54Xs+WWW5ZRnDK6TKCSOUBdZqS6BAgQIECAQI8JGAHqsQ7VHAIECBAgQGBoAQFoaCNHEOgpgdmzZ6c3v/nN6ZBDDklz57okRU91bh83Zr311kvx3h647LXXXmnddddNp5122sDN6ZZbbknTpk1Lm2yySfrf//3ftn1W+kfAKbD+6WstJZDuvvvu9OIXvzhNnDgxzZ8/P/9mzLPPPptGjRpFh0DXCowfPz7F+/iGG25IcYmHWEaOHJma3wKL9be+9a3pG9/4RvrlL3+Zdtttt9jUWhYsWJDGjBnTWvegPwSMAPVHP2slgVxgzz33TPGb8pNPPpkWL16c4uvBRxxxBB0CXSkQIz7x9fYIPwOXgw8+OA8/8T6PEBTh5rzzzssPiX8D8ZzY3gxI06dPH/h0j/tEQADqk47WTAIh8OCDD6Zdd921hTFlypT0i1/8orXuAYFuErjvvvvShAkT8vf1wHpffvnl+WqMdMay++675z/jrwj+kydPbq3HSNGf//zn1roH/SMgAPVPX2spgbRw4cK08cYbtyTWWGONNG/evNa6BwS6SSBOdz311FNpww03bKv2448/3nbhw1e84hVt+zfYYIPWepz+XbJkSWvdg/4REID6p6+1lEAuEPMdmkv8Njx27Njmqp8EekKgeYqr2Zgnnnii+TD/uWjRotZ6nAZzlegWR189EID6qrs1tt8FYi7EnXfe2WKI35SnTp3aWveAQC8IxMjmwOXGG28cuJoeeuih1nqM/owbN6617kH/CAhA/dPXWkogvepVr8rn/Nx7773pRz/6UXrkkUdMgva+6DmBz372s3mbjjzyyBTv9ZtuuimNHv1/t75ca6218ss//OpXv0qnnHJKPhH6b//2b3vOQIOGFvA1+KGNHEGgZwRivk/Ml2h+aybmRsQ1USwEul0gTmMN/Bp8jALF/KDmEhOdY/5bBKK4/k9ziVPAzX8PzW1+9oeAANQf/ayVBNoEIvQ0rwfUtsMKgR4SiIsc/v73v09vfOMbl2vVd77znfwbkctOoF7uQBt6VkAA6tmu1TACBAgQIEBgMAFzgAaTsZ0AAQIECBDoWQEBqGe7VsMIECBAgACBwQQEoMFkbCdAgAABAgR6VkAA6tmu1TACBAgQIEBgMAEBaDAZ23taIK4E+/Wvfz0dd9xx6Z3vfGf60pe+lB544IHK2/zFL34xXX/99Xk9fve736XTTz+94zote7Xbjp+4ig8M6xNPPHGl77dU1/atYj4vT4DAKhIQgFYRrJetr0Bc/ThujnjMMcek+Jps3DE6PqBf+cpXpuuuu67Sin/hC19I1157bV6HCECf/vSnO6rPpZdemmbNmtXRsWUfFAHoX//1X9M999zzvIuuc/ued6M8kQCBSgX+79KYlVZB4QTKFfjP//zP9Nvf/ja/JUTzGiBxP6DtttsunXDCCemnP/1puRUapLRDDjkkxZ9OlrjWydNPP93JoV15TK+3rys7RaUJdLmAEaAu70DVH75AjESsu+66adKkSa0nx1VkzzrrrPTa17423zZ//vz0jne8o+2+Wffdd1++LUaQYlQj9v/pT39KH/zgB9Pf/M3fpJNPPjm/q/QPfvCD9Hd/93f56bWhrrL84x//OMXl+g866KD81hStCmUPYjTqfe97X2tTXM7/8MMPT3vuuWdedvNU2S9+8YsUoa5Zv8ceeyx/zve///38Nhdx/Nve9rZ02WWXtV4rTrXFrTC+9rWv5ReJO/jgg5cLfnGbjNNOOy3tu+++6Z//+Z/Tr3/969bz48E3vvGNvJ377bdfilsPxI1Vi5Y5c+ak9773vWmfffbJR9zCeOASoTRM995777zdzVOSy7YvRsbiuEcffbT19Kjn5z//+dZ6XO33H/7hH1pX+B2qroOVHS/YiVWr4OzB1VdfnbtddNFFKWziZyxxCu8jH/lIPlL31re+Nf3sZz/Ltzf/ilOyccG+eC99+MMfzm/XEPua77Vo99FHH533x+c+97m2qxzHcddcc016+9vfnl73utfl772//OUvsTlfOmnDYOU3X6PIcLD3ZvO5fhKoo4AAVMdeUadVKnDAAQfkHy5xGuycc85Jd999d17errvumv7lX/4lf7xw4cL07//+7203TYwP3Nj2zDPP5EEnHs+cOTONGjUq7bTTTvl8nTgN9bGPfSy9+tWvzk+vregKtM3G/fCHP8w/IGP0afvtt8/DSlyuv7nE6bnzzjsvX42bN0Z946aN8eEfgW2XXXZJt99+e9pggw3SRhttlFZfffW04447prjhacxpitGjuNpzfChGneODNW4VEEuEn5j7dO655+aBKm4IGW259dZb8/0xmhRBJcqPNsUd5KO8plXMnXr/+9+fttxyy7ytMVfpwAMPzJ872F9HHHFEiltxxAf0V77ylbZT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" /><!-- --></p>
 </div>
 <div id="export-relevant-participant-data-to-a-data-frame" class="section level2">
 <h2>Export relevant participant data to a data frame</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get mean consistency scores for all participants, filtering first by letters, then digits</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mean_cscores_letters <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_mean_consistency_scores</span>(<span class="at">symbol_filter=</span>LETTERS)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mean_cscores_digits <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_mean_consistency_scores</span>(<span class="at">symbol_filter=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># get number of graphemes where all response colors were non-missing, </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># filtering first by letters, then digits</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (in the example data frame, all participants have all-valid responses)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>num_valid_letters <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_numbers_all_colored_graphemes</span>(<span class="at">symbol_filter=</span>LETTERS)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>num_valid_digits <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_numbers_all_colored_graphemes</span>(<span class="at">symbol_filter=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>p_ids <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_ids</span>()</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>mean_scores_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">participant_id=</span>p_ids, </span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">cscore_letters=</span>mean_cscores_letters,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">cscore_digits=</span>mean_cscores_digits,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">num_valid_letters=</span>num_valid_letters,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">num_valid_digits=</span>num_valid_digits</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mean_scores_df)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   participant_id cscore_letters cscore_digits num_valid_letters</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1              1       119.2646       155.089                 2</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2              2       129.1678        45.786                 2</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3              3       145.5045       164.870                 2</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   num_valid_digits</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                1</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                1</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                1</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># get mean consistency scores for all participants, filtering first by letters, then digits</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>mean_cscores_letters <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_mean_consistency_scores</span>(<span class="at">symbol_filter=</span>LETTERS)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>mean_cscores_digits <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_mean_consistency_scores</span>(<span class="at">symbol_filter=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># get number of graphemes where all response colors were non-missing, </span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co"># filtering first by letters, then digits</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co"># (in the example data frame, all participants have all-valid responses)</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>num_valid_letters <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_numbers_all_colored_graphemes</span>(<span class="at">symbol_filter=</span>LETTERS)</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>num_valid_digits <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_numbers_all_colored_graphemes</span>(<span class="at">symbol_filter=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>p_ids <span class="ot">&lt;-</span> pg<span class="sc">$</span><span class="fu">get_ids</span>()</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>mean_scores_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>  <span class="at">participant_id=</span>p_ids, </span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>  <span class="at">cscore_letters=</span>mean_cscores_letters,</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>  <span class="at">cscore_digits=</span>mean_cscores_digits,</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>  <span class="at">num_valid_letters=</span>num_valid_letters,</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>  <span class="at">num_valid_digits=</span>num_valid_digits</span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>)</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="fu">print</span>(mean_scores_df)</span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">#&gt;   participant_id cscore_letters cscore_digits num_valid_letters</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">#&gt; 1              1       119.2646       155.089                 2</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co">#&gt; 2              2       129.1678        45.786                 2</span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co">#&gt; 3              3       145.5045       164.870                 2</span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co">#&gt;   num_valid_digits</span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="co">#&gt; 1                1</span></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="co">#&gt; 2                1</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="co">#&gt; 3                1</span></span></code></pre></div>
 </div>
 <div id="finding-more-information" class="section level2">
 <h2>Finding more information</h2>

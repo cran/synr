@@ -1,6 +1,6 @@
 Package: synr
 Title: Explore and Process Synesthesia Consistency Test Data
-Version: 0.6.0
+Version: 1.0.0
 Authors@R: person("Lowe", "Wilsson", email = "datalowe@posteo.de",
                   role = c("aut", "cre"))
 Description: Explore synesthesia
@@ -18,8 +18,8 @@ LazyData: true
 RoxygenNote: 7.2.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2022-08-23 09:21:58 UTC; workingman
+Packaged: 2024-01-13 12:12:52 UTC; lowe
 Author: Lowe Wilsson [aut, cre]
 Maintainer: Lowe Wilsson <datalowe@posteo.de>
 Repository: CRAN
-Date/Publication: 2022-08-23 10:40:02 UTC
+Date/Publication: 2024-01-13 21:50:02 UTC

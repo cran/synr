@@ -26,7 +26,7 @@ library(synr)
 ### Synesthesia and consistency testing
 Within [synesthesia](https://en.wikipedia.org/wiki/Synesthesia) research, **[consistency tests](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118597/#S4title)** are often used. Basically, a participant is presented a set of stimuli (inducers; e. g. letters, digits, months) and has to respond by indicating what color (concurrent), if any, they associate with the grapheme. Each stimulus is repeated a certain number of times, usually three times, throughout the test. If the participant is unusually consistent in the colors they respond with, e. g. choosing a red color every time an 'A' is shown and always choosing a green color for 'H', this indicates that the participant might have synesthetic grapheme-color associations. There might of course be other reasons for consistent response patterns, such as if the participant employed mnemonic strategies, for which reason consistency testing is often combined with other measures for synesthesia classification. Still, consistency testing is widely considered to be an important tool for synesthesia research.
 
-An archetypal form of synesthesia, often investigated with consistency tests, is [grapheme-color synesthesia](https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia), where **grapheme** refers to a single written symbol such as a digit or a letter. Note that in order to make the documentation less abstract, **synr's documentation and code consistently uses 'grapheme' to refer to consistency test stimuli in general**. Examples of this can be seen below. Note, however, that synr can be also be used with data from consistency tests involving non-grapheme stimuli (an example of this can be found in [another synr vignette](dingemanse-data-example.html)).
+An archetypal form of synesthesia, often investigated with consistency tests, is [grapheme-color synesthesia](https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia), where **grapheme** refers to a single written symbol such as a digit or a letter. Note that in order to make the documentation less abstract, **synr's documentation and code consistently uses 'grapheme' to refer to consistency test stimuli in general**. Examples of this can be seen below. Note, however, that synr can be also be used with data from consistency tests involving non-grapheme stimuli (an example of this can be found in [another synr vignette available online](https://datalowe.github.io/synr/articles/dingemanse-data-example.html)).
 
 In consistency testing, participants' levels of consistency are estimated by using a score based on response colors' color space distances. This has been called by different names, such as ['color variation score'](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4118597/#S4title). Within the synr package, the term **'consistency score'** is used to refer to this score.
 
@@ -210,7 +210,7 @@ head(ctest_summary_df)
 
 
 ### Validating participant data
-synr includes a unique procedure for validating participant data based on estimating how varied participants' color responses are. Detailed information is available in the [validation-focused article](validate-data.html). A very rough example and explanation follows.
+synr includes a unique procedure for validating participant data based on estimating how varied participants' color responses are. Detailed information is available in the [validation-focused online article](https://datalowe.github.io/synr/articles/validate-data.html). A very rough example and explanation follows.
 
 #### participantgroup level: `check_valid_get_twcv_scores`
 The larger example data frame `synr_exampledf_large` (with 3 trials per grapheme) is used in this example:
@@ -261,7 +261,7 @@ val_id_df <- cbind(
 head(val_id_df)
 ```
 
-Again, please see the [validation-focused article](validate-data.html) for more information.
+Again, please see the [validation-focused article](https://datalowe.github.io/synr/articles/validate-data.html) for more information.
 
 ## Filtering data
 Participants who have synesthetic associations might only have those for some of the graphemes used in a test. For instance, a participant might only have synesthetic associations for digits, but not letters, even though both categories are included in the test. synr helps you apply filters to calculate summary statistics for only a subset of graphemes. Filters are applied by passing a character vector of symbols/graphemes to the `symbol_filter=` argument, when using participant-level or participantgroup-level methods for summary statistics.
@@ -368,6 +368,6 @@ pg_large$save_plots(
 ```
 
 ## Next steps
-There are additional articles which explain synr, including some mentioned throughout this article. To better understand how synr is used in practice, you might want to read [Using synr with real data: Coloured vowels](dingemanse-data-example.html).
+There are additional articles which explain synr, including some mentioned throughout this article. To better understand how synr is used in practice, you might want to read [Using synr with real data: Coloured vowels (online)](https://datalowe.github.io/synr/articles/dingemanse-data-example.html).
 
 There is more detailed and technical information about synr that you can find in the help documentation, as mentioned throughout this article.
